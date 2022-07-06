@@ -16,8 +16,15 @@ with col2:
     st.markdown(original_title, unsafe_allow_html=True)
     
 # let's do the navigation bar first
-selected = option_menu(
-    menu_title=None, options=['Home', 'Recommendation', 'Health Tips'], icons=['house', 'pen', 'book'], menu_icon='cast', default_index=0, orientation='horizontal'
+selected= option_menu(
+    menu_title=None,options=['Home', 'Recommendation', 'Health Tips'], icons=['house', 'pen', 'book'],
+    menu_icon="cast",default_index=0,orientation="horizontal",
+    styles={
+        "container": {"padding": "0!important"},
+        "icon": {"color": "#fff", },
+        "nav-link": {"font-size": "18px", "text-align": "center", "margin":"0px", "--hover-color": "#2596be"},
+        "nav-link-selected": {"background-color": "#2596be"},
+        },
 )
 if selected == 'Home':
     st.markdown("<h2 style='text-align: center; color: black;'>Diabetic Meal Plans </h2>", unsafe_allow_html=True)
@@ -47,29 +54,36 @@ if selected == 'Home':
 
 if selected == 'Recommendation':
 
+    form=st.empty()
+    with st.form("form 1",clear_on_submit=True):
+        genre = st.radio( "Do you wish to give your medical details in good faith?",
+        ('Yes', 'No'))
+        genre = st.radio( "Do you trust our ability to keep your data secure?",
+        ('Yes', 'No'))
+        genre = st.radio( "Do you have the Eurisco diagnosis concent form?",
+        ('Yes', 'No'))
+        submitted = st.form_submit_button("Submit")
+    if submitted:
+        # with st.form("form 2",clear_on_submit=True):
+        form.empty()
+        st.subheader("Personal information")
+        col1, col2, col3, col4,col5 = st.columns(5)
 
-    st.subheader("Personal information")
-    col1, col2, col3, col4,col5 = st.columns(5)
+        with col1:
+            name = st.text_input('What is your name:', '')
 
-    with col1:
-        name = st.text_input('What is your name:', '')
+        with col2:
+            col2 = st.radio("Select your Gender", ("Male", "Female"))
 
-    with col2:
-        col2 = st.radio("Select your Gender", ("Male", "Female"))
+        with col3:
+            col3 = st.text_input('Input your age', '')
+        with col4:
+            col4 = st.text_input('weight(kg):', '')
+        with col5:
+            col5 = st.text_input("Occupation")
 
-    with col3:
-        col3 = st.text_input('Input your age', '')
-    with col4:
-        col4 = st.text_input('weight(kg):', '')
-    with col5:
-        col5 = st.text_input("Occupation")
-
-    st.subheader("Food Selection And Recommendation")
-    col1, col2 = st.columns(2)
-
-    with col1:
-
-
+        st.subheader("Food Selection And Recommendation")
+        
         food = pd.read_csv("new.csv", encoding='cp1252')
         # First we need to convert the datatype to intergers before segmenting it
 
@@ -93,17 +107,15 @@ if selected == 'Recommendation':
         x = np.array(names)
         ans1 = np.unique(x)
 
-    finallist = ""
-    
-    bruh = st.button("Recommended Food")
-    if bruh == True:
-        st.write('These are your recommended Food:', name)
-        recommend=recommend.drop(['Glycemic_index','Glycemic load per serving','Glycemic_Class'],axis=1)
-        finallist =recommend.style.hide_index()
+        finallist = ""
         
-        st.write(finallist.to_html(columns=['FOOD','Serving size (grams)']), unsafe_allow_html=True)
-        # if recommend.loc[(recommend['Category'] == 'Cookies') & (recommend['Category'] == 'Vegetables')]:
-        #     st.write("The category is not recommended")
+        bruh = st.button("Recommended Food")
+        if bruh == True:
+            st.write('These are your recommended Food:', name)
+            recommend=recommend.drop(['Glycemic_index','Glycemic load per serving','Glycemic_Class'],axis=1)
+            finallist =recommend.style.hide_index()
+            
+            st.write(finallist.to_html(columns=['FOOD','Serving size (grams)']), unsafe_allow_html=True)
             
 if selected ==("Health Tips"):
     st.write("Changing your lifestyle could be a big step toward diabetes prevention — and it's never too late to start. Consider these tips.")
