@@ -7,10 +7,17 @@ from streamlit_option_menu import option_menu
 from textblob import TextBlob
 from PIL import Image
 
-st.title("Food Recommender System")
+primaryColor="blue"
+col1, mid, col2 = st.columns([1,1,10])
+with col1:
+    st.image('logo.PNG', width=100)
+with col2:
+    original_title = '<h1 style="font-family:Courier; color:#2596be; font-size: 40px;">Food Recommender System</h1>'
+    st.markdown(original_title, unsafe_allow_html=True)
+    
 # let's do the navigation bar first
 selected = option_menu(
-    menu_title=None, options=['Home', 'Recommendation', 'Health Tips'], icons=['house', 'book', 'boxes'], menu_icon='cast', default_index=0, orientation='horizontal'
+    menu_title=None, options=['Home', 'Recommendation', 'Health Tips'], icons=['house', 'pen', 'book'], menu_icon='cast', default_index=0, orientation='horizontal'
 )
 if selected == 'Home':
     st.markdown("<h2 style='text-align: center; color: black;'>Diabetic Meal Plans </h2>", unsafe_allow_html=True)
@@ -19,9 +26,9 @@ if selected == 'Home':
     st.subheader("Counting Carbs")
     col1, col2 = st.columns(2)
     with col1:
-        st.write('''Keeping track of how many carbs you eat and setting a limit for each meal can help keep your blood sugar levels in your target range.
-         Work with your doctor or a registered dietitian to find out how many carbs you can eat each day and at each meal.
-         Many people with diabetes count carbs to make managing blood sugar easier.
+        st.write('''Counting carbohydrates (carbs) is a key strategy for meeting blood glucose levels. This is because the carbs in food are broken down into glucose. Insulin helps to regulate glucose levels.
+         This is why counting them is so important.
+         Knowing the number of carbs a person needs to eat each day is important to make carb-counting work. 
          ''')
         st.markdown("***************************************************")
     with col2:
@@ -29,9 +36,9 @@ if selected == 'Home':
          st.markdown("***************************************************")
     with col2:
         
-        st.write('''It’s easy to eat more food than you need without realizing it. The plate method is a 
-        simple, visual way to make sure you get enough nonstarchy vegetables and lean protein while limiting 
-        the amount of higher-carb foods you eat that have the highest impact on your blood sugar.''')
+        st.write('''The Diabetes Plate Method is the easiest way to create healthy meals that can help manage blood sugar since
+        you can create perfectly portioned meals with a healthy balance of vegetables, protein, and carbohydrates—without any counting, calculating, weighing, or measuring. 
+        All you need is a plate''')
         
     with col1:
         st.subheader("The Plate Method")
