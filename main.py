@@ -1,16 +1,12 @@
 import streamlit as st
 import pandas as pd
-from plotly import graph_objs as go
-from sklearn.linear_model import LinearRegression
 import numpy as np
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import NearestNeighbors
 from streamlit_option_menu import option_menu
 from textblob import TextBlob
-import streamlit_authenticator as stauth
-import sqlite3
-import hashlib
 from PIL import Image
+
 st.title("Food Recommender System")
 # let's do the navigation bar first
 selected = option_menu(
