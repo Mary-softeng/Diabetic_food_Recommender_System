@@ -25,7 +25,7 @@ if selected == 'Home':
          ''')
         st.markdown("***************************************************")
     with col2:
-         st.image("carbs.PNG")
+         st.image("https://github.com/Mary-softeng/Diabetic_food_Recommender_System/blob/main/Recommender_System/carbs.PNG")
          st.markdown("***************************************************")
     with col2:
         
