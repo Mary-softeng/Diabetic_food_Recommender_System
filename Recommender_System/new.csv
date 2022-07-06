@@ -1,0 +1,113 @@
+FOOD,Serving size (grams),Glycemic_index,Glycemic load per serving,Category
+"Banana cake, made with sugar",60,47,14,Baked
+"Banana cake, made without sugar",60,55,12,Baked
+"Sponge cake, plain",63,46,17,Baked
+Vanilla cake made from packet mix with vanilla frosting (Betty Crocker),111,42,24,Baked
+"Apple, made with sugar",60,44,13,Baked
+"Apple, made without sugar",60,48,9,Baked
+"Waffles, Aunt Jemima (Quaker Oats)",35,76,10,Baked
+"Bagel, white, frozen",70,72,25,Baked
+"Baguette, white, plain",30,95,15,Baked
+"Coarse barley bread, 75-80% kernels, average",30,34,7,Baked
+Hamburger bun,30,61,9,Baked
+Kaiser roll,30,73,12,Baked
+Pumpernickel bread,30,56,7,Baked
+50% cracked wheat kernel bread,30,58,12,Baked
+White wheat flour bread,30,71,10,Baked
+"Wonder™ bread, average",30,73,10,Baked
+"Whole wheat bread, average",30,71,9,Baked
+100% Whole Grain™ bread (Natural Ovens),30,51,7,Baked
+"Pita bread, white",30,68,10,Baked
+Corn tortilla,50,52,12,Baked
+Wheat tortilla,50,30,8,Baked
+"Coca Cola®, average",250 mL,63,16,Beverage
+"Fanta®, orange soft drink",250 mL,68,23,Beverage
+"Lucozade®, original (sparkling glucose drink)",250 mL,105,40,Beverage
+"Apple juice, unsweetened, average",250 mL,44,30,Beverage
+Cranberry juice cocktail (Ocean Spray®),250 mL,68,24,Beverage
+Gatorade,250 mL,78,12,Beverage
+"Orange juice, unsweetened",250 mL,50,12,Beverage
+"Tomato juice, canned",250 mL,38,4,Beverage
+"All-Bran™, average",30,55,12,Breakfast
+"Coco Pops™, average",30,77,20,Breakfast
+"Cornflakes™, average",30,93,23,Breakfast
+Cream of Wheat™ (Nabisco),250,66,17,Breakfast
+"Cream of Wheat™, Instant (Nabisco)",250,74,22,Breakfast
+"Grapenuts™, average",30,75,16,Breakfast
+"Muesli, average",30,66,16,Breakfast
+"Oatmeal, average",250,55,13,Breakfast
+"Instant oatmeal, average",250,83,30,Breakfast
+"Puffed wheat, average",30,80,17,Breakfast
+Raisin Bran™ (Kellogg's),30,61,12,Breakfast
+Special K™ (Kellogg's),30,69,14,Breakfast
+"Pearled barley, average",150,28,12,Grains
+"Sweet corn on the cob, average",150,60,20,Grains
+"Couscous, average",150,65,9,Grains
+Quinoa,150,53,13,Grains
+"White rice, average",150,89,43,Grains
+Quick cooking white basmati,150,67,28,Grains
+"Brown rice, average",150,50,16,Grains
+"Converted, white rice (Uncle Ben's®)",150,38,14,Grains
+"Whole wheat kernels, average",50,30,11,Grains
+"Bulgur, average",150,48,12,Grains
+Graham crackers,25,74,14,Cookies
+Vanilla wafers,25,77,14,Cookies
+Shortbread,25,64,10,Cookies
+"Rice cakes, average",25,82,17,Cookies
+"Rye crisps, average",25,64,11,Cookies
+Soda crackers,25,74,12,Cookies
+"Ice cream, regular",50,57,6,Dairy
+"Ice cream, premium",50,38,3,Dairy
+"Milk, full fat",250mL,41,5,Dairy
+"Milk, skim",250 mL,32,4,Dairy
+"Reduced-fat yogurt with fruit, average",200,33,11,Dairy
+"Apple, average",120,39,6,Fruits
+"Banana, ripe",120,62,16,Fruits
+"Dates, dried",60,42,18,Fruits
+Grapefruit,120,25,3,Fruits
+"Grapes, average",120,59,11,Fruits
+"Orange, average",120,40,4,Fruits
+"Peach, average",120,42,5,Fruits
+"Peach, canned in light syrup",120,40,5,Fruits
+"Pear, average",120,38,4,Fruits
+"Pear, canned in pear juice",120,43,5,Fruits
+"Prunes, pitted",60,29,10,Fruits
+Raisins,60,64,28,Fruits
+Watermelon,120,72,4,Fruits
+"Baked beans, average",150,40,6,Beans
+"Blackeye peas, average",150,33,10,Beans
+Black beans,150,30,7,Beans
+"Chickpeas, average",150,10,3,Beans
+"Chickpeas, canned in brine",150,38,9,Beans
+"Navy beans, average",150,31,9,Beans
+"Kidney beans, average",150,29,7,Beans
+"Lentils, average",150,29,5,Beans
+"Soy beans, average",150,15,1,Beans
+"Cashews, salted",50,27,3,Beans
+"Peanuts, average",50,7,0,Nuts
+"Fettucini, average",180,32,15,Noodles
+"Macaroni, average",180,47,23,Noodles
+Macaroni and Cheese (Kraft),180,64,32,Noodles
+"Spaghetti, white, boiled, average",180,46,22,Noodles
+"Spaghetti, white, boiled 20 min, average",180,58,26,Noodles
+"Spaghetti, wholemeal, boiled, average",180,42,17,Noodles
+"Corn chips, plain, salted, average",50,42,11,Snacks
+Fruit Roll-Ups®,30,99,24,Snacks
+"M & M's®, peanut",30,33,6,Snacks
+"Microwave popcorn, plain, average",20,55,6,Snacks
+"Potato chips, average",50,51,12,Snacks
+"Pretzels, oven-baked",30,83,16,Snacks
+Snickers Bar®,60,51,18,Snacks
+"Green peas, average",80,51,4,Vegetables
+"Carrots, average",80,35,2,Vegetables
+Parsnips,80,52,4,Vegetables
+"Baked russet potato, average",150,111,33,Vegetables
+"Boiled white potato, average",150,82,21,Vegetables
+"Instant mashed potato, average",150,87,17,Vegetables
+"Sweet potato, average",150,70,22,Vegetables
+"Yam, average",150,54,20,Vegetables
+Hummus (chickpea salad dip),30,6,0,Salad
+"Chicken nuggets, frozen, reheated in microwave oven 5 min",100,46,7,Chicken
+"Pizza, plain baked dough, served with parmesan cheese and tomato sauce",100,80,22,Pizza
+"Pizza, Super Supreme (Pizza Hut)",100,36,9,Pizza
+"Honey, average",25,61,12,Honey
