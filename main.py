@@ -54,68 +54,57 @@ if selected == 'Home':
 
 if selected == 'Recommendation':
 
-    form=st.empty()
-    with st.form("form 1",clear_on_submit=True):
-        genre = st.radio( "Do you wish to give your medical details in good faith?",
-        ('Yes', 'No'))
-        genre = st.radio( "Do you trust our ability to keep your data secure?",
-        ('Yes', 'No'))
-        genre = st.radio( "Do you have the Eurisco diagnosis concent form?",
-        ('Yes', 'No'))
-        submitted = st.form_submit_button("Submit")
-    if submitted:
-        # with st.form("form 2",clear_on_submit=True):
-        form.empty()
-        st.subheader("Personal information")
-        col1, col2, col3, col4,col5 = st.columns(5)
 
-        with col1:
-            name = st.text_input('What is your name:', '')
+    st.subheader("Personal information")
+    col1, col2, col3, col4,col5 = st.columns(5)
 
-        with col2:
-            col2 = st.radio("Select your Gender", ("Male", "Female"))
+    with col1:
+        name = st.text_input('What is your name:', '')
 
-        with col3:
-            col3 = st.text_input('Input your age', '')
-        with col4:
-            col4 = st.text_input('weight(kg):', '')
-        with col5:
-            col5 = st.text_input("Occupation")
+    with col2:
+        col2 = st.radio("Select your Gender", ("Male", "Female"))
 
-        st.subheader("Food Selection And Recommendation")
-        
-        food = pd.read_csv("new.csv", encoding='cp1252')
-        # First we need to convert the datatype to intergers before segmenting it
+    with col3:
+        col3 = st.text_input('Input your age', '')
+    with col4:
+        col4 = st.text_input('weight(kg):', '')
+    with col5:
+        col5 = st.text_input("Occupation")
 
-        def glycemic_class():
-            food['Glycemic_index'] = food['Glycemic_index'].astype(int)
+    st.subheader("Food Selection And Recommendation")
 
-            # Lets now feature engineer different classes of aglycemic index
-            food['Glycemic_Class'] = pd.cut(food['Glycemic_index'], bins=[0, 55, 70, food['Glycemic_index'].max(
-            )], labels=['Low glycemic index', 'Mid glycemic index', 'High glycemic index'])
+    food = pd.read_csv("new.csv", encoding='cp1252')
+    # First we need to convert the datatype to intergers before segmenting it
 
-        glycemic_class()
+    def glycemic_class():
+        food['Glycemic_index'] = food['Glycemic_index'].astype(int)
 
-        cuisine = st.selectbox("Choose the Category!", ['Baked', 'Fruits', 'Breakfast', 'Grains', 'Beans', 'Beverage',
-                                                        'Vegetables ', 'Snacks', 'Cookies', 'Noodles', 'Dairy', 'Nuts', 'Salad', 'Chicken', 'Honey'])
+        # Lets now feature engineer different classes of aglycemic index
+        food['Glycemic_Class'] = pd.cut(food['Glycemic_index'], bins=[0, 55, 70, food['Glycemic_index'].max(
+        )], labels=['Low glycemic index', 'Mid glycemic index', 'High glycemic index'])
 
-        recommend = food[(food['Category'] == cuisine) & (
-            food['Glycemic_Class'] == 'Low glycemic index')]
-        
-        ans = food.loc[(food.Category == cuisine), ['FOOD']]
-        names = ans['FOOD'].tolist()
-        x = np.array(names)
-        ans1 = np.unique(x)
+    glycemic_class()
 
-        finallist = ""
-        
-        bruh = st.button("Recommended Food")
-        if bruh == True:
-            st.write('These are your recommended Food:', name)
-            recommend=recommend.drop(['Glycemic_index','Glycemic load per serving','Glycemic_Class'],axis=1)
-            finallist =recommend.style.hide_index()
-            
-            st.write(finallist.to_html(columns=['FOOD','Serving size (grams)']), unsafe_allow_html=True)
+    cuisine = st.selectbox("Choose the Category!", ['Baked', 'Fruits', 'Breakfast', 'Grains', 'Beans', 'Beverage',
+                                                    'Vegetables ', 'Snacks', 'Cookies', 'Noodles', 'Dairy', 'Nuts', 'Salad', 'Chicken', 'Honey'])
+
+    recommend = food[(food['Category'] == cuisine) & (
+        food['Glycemic_Class'] == 'Low glycemic index')]
+
+    ans = food.loc[(food.Category == cuisine), ['FOOD']]
+    names = ans['FOOD'].tolist()
+    x = np.array(names)
+    ans1 = np.unique(x)
+
+    finallist = ""
+
+    bruh = st.button("Recommended Food")
+    if bruh == True:
+        st.write('These are your recommended Food:', name)
+        recommend=recommend.drop(['Glycemic_index','Glycemic load per serving','Glycemic_Class'],axis=1)
+        finallist =recommend.style.hide_index()
+
+        st.write(finallist.to_html(columns=['FOOD','Serving size (grams)']), unsafe_allow_html=True)
             
 if selected ==("Health Tips"):
     st.write("Changing your lifestyle could be a big step toward diabetes prevention — and it's never too late to start. Consider these tips.")
